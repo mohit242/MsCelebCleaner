@@ -3,8 +3,9 @@ import argparse
 import re
 parser = argparse.ArgumentParser()
 parser.add_argument('imgFolder',type=str,default='./raw')
+parser.add_argument('--washList',type=str,default='./list.txt)
 args = parser.parse_args()
-washList = '/media/deepak/11a0ed1e-3fe3-4bfa-8528-46f0d5b76502/Mohit/MS-Celeb-1M_WashList/MsCeleb1M_washlist.txt'
+washList = args.washList
 r=[]
 if os.path.exists(args.imgFolder):
     for path, dnames, fnames in os.walk(args.imgFolder):
