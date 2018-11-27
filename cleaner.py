@@ -3,7 +3,7 @@ import argparse
 import re
 parser = argparse.ArgumentParser()
 parser.add_argument('imgFolder',type=str,default='./raw')
-parser.add_argument('--washList',type=str,default='./list.txt)
+parser.add_argument('--washList',type=str,default='./list.txt')
 args = parser.parse_args()
 washList = args.washList
 r=[]
