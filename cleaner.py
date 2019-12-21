@@ -3,7 +3,7 @@ import argparse
 import re
 parser = argparse.ArgumentParser()
 parser.add_argument('imgFolder',type=str,default='./raw')
-parser.add_argument('--washList',type=str,default='./list.txt)
+parser.add_argument('--washList',type=str,default='./list.txt')
 args = parser.parse_args()
 washList = args.washList
 r=[]
@@ -15,6 +15,8 @@ if os.path.exists(args.imgFolder):
 wlFile = open(washList,'r')
 goodFiles = wlFile.readlines()
 goodFiles = [f.strip('\n ') for f in goodFiles]
+goodFiles = [f.strip('\r ') for f in goodFiles]
+
 print("Warning !!!!!!!!!!!!!!\nCheck folder path before deleting files: {}\nDo you want to continue?".format(args.imgFolder))
 accept= input()
 if accept.lower() != 'y':
